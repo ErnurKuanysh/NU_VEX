@@ -32,10 +32,10 @@ lemlib::TrackingWheel vertical_tracking_wheelr(&vertical_encoderr, lemlib::Omniw
 
 // odometry settings
 lemlib::OdomSensors sensors(&vertical_tracking_wheell, // vertical tracking wheel 1, set to null
-                            nullptr, // vertical tracking wheel 2, set to nullptr as we are using IMEs
+                            vertical_tracking_wheelr, // vertical tracking wheel 2, set to nullptr as we are using IMEs
                             &horizontal_tracking_wheel, // horizontal tracking wheel 1
                             nullptr, // horizontal tracking wheel 2, set to nullptr as we don't have a second one
-                            &imu // inertial sensor
+                            nullptr // inertial sensor
 );
 
 lemlib::ControllerSettings lateral_controller(10, // proportional gain (kP)
